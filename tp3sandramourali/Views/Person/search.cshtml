@@ -1,0 +1,51 @@
+﻿@model tp3sandramourali.Models.Person
+
+@{
+    ViewData["Title"] = "Search";
+}
+<div style="display: flex;justify-content:space-evenly; align-items:center;width:100% ">
+    <h1>Search</h1>
+    <h3>
+        <a asp-action="all">ALL Persons</a>
+    </h3>
+</div>
+
+
+
+@{
+    if (ViewBag.notFound)
+    {
+        <div style="padding: 20px; border-radius:10px; text-align:center" class="alert-danger">
+            THIS PERSON IS NOT FOUND PLEASE VERIFY YOUR INFORMATIONS
+        </div>
+    }
+}
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="search">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="first_name" class="control-label"></label>
+                <input name="first_name" asp-for="first_name" class="form-control" />
+                <span asp-validation-for="first_name" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="country" class="control-label"></label>
+                <input name="country" asp-for="country" class="form-control" />
+                <span asp-validation-for="country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="SEARCH" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

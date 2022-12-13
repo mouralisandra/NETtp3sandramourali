@@ -1,0 +1,60 @@
+﻿@model List<tp3sandramourali.Models.Person>
+
+@{
+    ViewData["Title"] = "ALL PERSONS";
+}
+
+<div style="display: flex;justify-content:space-evenly; align-items:center;width:100% ">
+    <h1> ALL Persons</h1>
+    <h3>
+        <a asp-action="search">Search</a>
+    </h3>
+</div>
+
+<div>
+    <hr />
+    @{
+        foreach (Person p in Model)
+        {
+            <dl class="row">
+                <dt class="col-sm-2">
+                    id
+                </dt>
+                <dd class="col-sm-10">
+                    @p.id
+                </dd>
+                <dt class="col-sm-2">
+                    first_name
+                </dt>
+                <dd class="col-sm-10">
+                    @p.first_name
+                </dd>
+                <dt class="col-sm-2">
+                    last_name
+                </dt>
+                <dd class="col-sm-10">
+                    @p.last_name
+                </dd>
+                <dt class="col-sm-2">
+                    email
+                </dt>
+                <dd class="col-sm-10">
+                    @p.email
+                </dd>
+                <dt class="col-sm-2">
+                    image
+                </dt>
+                <dd class="col-sm-10">
+                    @p.image
+                </dd>
+                <dt class="col-sm-2">
+                    country
+                </dt>
+                <dd class="col-sm-10">
+                    @p.country
+                </dd>
+            </dl>
+        }
+    }
+
+</div>
